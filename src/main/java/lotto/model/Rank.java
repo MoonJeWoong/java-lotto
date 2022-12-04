@@ -32,9 +32,6 @@ public enum Rank {
     public static Rank of(int correctCount, boolean correctBonusNumber) {
         List<Rank> determinedRanks = Arrays.stream(values()).filter(rank -> rank.getCount() == correctCount)
                 .collect(Collectors.toList());
-        if(determinedRanks.size()==SIZE_ZERO){
-            throw new IllegalArgumentException(NO_SUCH_RANK_ERROR);
-        }
         if(determinedRanks.size()!=DETERMINED_SIZE){
             return determineSecondOrThird(correctBonusNumber);
         }
