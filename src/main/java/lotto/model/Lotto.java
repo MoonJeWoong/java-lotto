@@ -18,10 +18,6 @@ public class Lotto {
         this.numbers = Utils.sortListNaturalOrder(numbers);
     }
 
-    public List<Integer> getNumbers() {
-        return numbers;
-    }
-
     public int countCorrectLottoNumbers(Lotto other) {
         return (int)this.numbers.stream()
                 .filter(other::contains)
